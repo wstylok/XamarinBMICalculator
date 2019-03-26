@@ -6,9 +6,30 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Text="BMI Calculator" FontSize="Large" Grid.ColumnSpan="2" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="LightBlue" />
+            <Label Text="Waga:" Grid.Column="0" Grid.Row="1" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" />
+            <Label Text="Wzrost:" Grid.Column="0" Grid.Row="2" FontSize="Medium" HorizontalOptions="End" VerticalOptions="Center" />
+            <Entry x:Name="Weight" Placeholder="Podaj wagę w kg" Grid.Column="1" Grid.Row="1" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Center" WidthRequest="200" />
+            <Entry x:Name="Height" Placeholder="Podaj wzrost w cm" Grid.Column="1" Grid.Row="2" FontSize="Medium" HorizontalOptions="StartAndExpand" VerticalOptions="Center" WidthRequest="200" />
+            <Button x:Name="Oblicz" Text="Oblicz" Clicked="Oblicz_Clicked" Grid.ColumnSpan="2" Grid.Row="3" />
+            <Label Text="Twoje BMI:" Grid.Column="0" Grid.Row="4" HorizontalOptions="End" VerticalOptions="Start" FontSize="Medium" />
+            <Label x:Name="Wynik" Text="{Binding}" Grid.Column="1" Grid.Row="4" HorizontalOptions="Start" VerticalOptions="Start" FontSize="Medium" />
+            <Label x:Name="CoOznacza" Text="{Binding}" Grid.ColumnSpan="2" Grid.Row="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" />
+        </Grid>
     </StackLayout>
 
 </ContentPage>
+ 
